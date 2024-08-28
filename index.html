@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body >
+    <div class="body">
+    <h1 class="CadUsuário"> Cadastro de usuários</h1>
+    <form name="form" id="form" action="nexxt.htm" method="post">
+        Nome: <input type="text" name="txtName" id="txtName"> <br/>
+        Idade: <input type="text" name="txtAge" id="txtAge"> <br/>
+        Sexo: <select name="cboGender" id="cboGender">
+               <option value="0">---Escolha a opção---</option> 
+               <option value="1"> Feminino</option>
+               <option value="2"> Masculino</option>
+            </select> <br>
+            Estado Civil: <br/>
+            Solteiro(a) <input type="radio" name="optMS" id="optSingle" value="1"/>
+            Casado(a) <input type="radio" name="optMS" id="optMarried" value="2"/>
+            Viúvo(a) <input type="radio" name="optMS" id="optWidower" value="3"/>
+            Divorciado(a) <input type="radio" name="optMS" id="optDivorced" value="4"/>
+            <br/>
+            <input type="button" value="Enviar" onclick="btnSendOnClick()"/>&nbsp;&nbsp;
+            <input type="reset" value="Limpar"/>
+    </form>
+</div>
+</body>
+<script>
+    const txtName = document.getElementById('txtName')
+    const txtAge = document.getElementById('txtAge')
+    const cboGender = document.getElementById('cboGender')
+
+    function btnSendOnClick(){
+        if(txtName.value == ""){
+            alert('Preenchimento obrigatório: Nome')
+            txtName.focus()
+        }
+        else if(txtAge.value == "") {
+            alert('Preenchimento obrigatório: Idade')
+            txtAge.focus()
+        }
+        else if(isNaN(parseInt( txtAge.value ))){
+            alert('Tipo de dado inválido: Idade')
+            txtAge.value = ""
+            txtAge.focus()
+        }
+        else if(cboGender.selectedIndex == 0){
+            alert('Seleção obrigatória: Sexo')
+            cboGender.focus()
+        }
+        else if(form.optMS.value == "") {
+            alert("Seleção obrigatória: Estado Cívil ")
+            optSingle.focus()
+        }
+        else{
+            form.submit()
+            
+        }
+    }
+</script>
+</html>

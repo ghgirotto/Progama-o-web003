@@ -1,0 +1,22 @@
+body {
+    font-size: 25px;
+}
+input, select {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+input[type=button]{
+    width: 120px;
+}
+input[type=reset]{
+    width: 120px;
+}
+.body{
+    background-color: blue;
+    margin-left: 5%;
+    max-width: 740px;
+
+}
+.CadUsuário{
+    padding-left: 10px;
+}
